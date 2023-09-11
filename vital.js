@@ -18,7 +18,7 @@ async function initMap() {
 
   // カスタムアイコンを作成
   const customIcon = {
-    url: "./img/poseidon.png", // アイコン画像のパス
+    url: "./img/poseidon.png", // アイコンz画像のパス
     scaledSize: new google.maps.Size(70, 70), // アイコンの幅と高さを指定
   };
 
@@ -30,7 +30,7 @@ async function initMap() {
   });
   // カスタムHTMLコンテンツを含むインフォウィンドウを作成
   const infoWindowContent2 =
-    '<div id="custom-marker-content2">別のコンテンツ</div>';
+    '<div id="custom-marker-content2">ポセイドン</div>';
   const infoWindow2 = new google.maps.InfoWindow({
     content: infoWindowContent2,
   });
