@@ -26,10 +26,21 @@ async function initMap() {
   const marker = new google.maps.Marker({
     map: map,
     position: position,
-    title: "Uluru",
     icon: customIcon, // カスタムアイコンを設定
   });
+  // カスタムHTMLコンテンツを含むインフォウィンドウを作成
+  const infoWindowContent2 =
+    '<div id="custom-marker-content2">別のコンテンツ</div>';
+  const infoWindow2 = new google.maps.InfoWindow({
+    content: infoWindowContent2,
+  });
 
+  // マーカーがクリックされたときにInfoWindowを表示
+  marker.addListener("mouseover", function () {
+    infoWindow2.open(map, marker);
+  });
+
+  //二つ目！！
   // 出雲大社の緯度経度情報を定義
   const izumoTaishaPosition = { lat: 35.401472, lng: 132.68553 };
 
@@ -47,8 +58,16 @@ async function initMap() {
     icon: newCustomIcon, // 新しいカスタムアイコンを設定
   });
 
-  // マーカーを地図に追加
-  newMarker.setMap(map);
+  // カスタムHTMLコンテンツを含むインフォウィンドウを作成
+  const infoWindowContent = '<div id="custom-marker-content">天照の大神</div>';
+  const infoWindow = new google.maps.InfoWindow({
+    content: infoWindowContent,
+  });
+
+  // マーカーがクリックされたときにInfoWindowを表示
+  newMarker.addListener("mouseover", function () {
+    infoWindow.open(map, newMarker);
+  });
 }
 
 initMap();
