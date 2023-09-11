@@ -2,26 +2,26 @@
 let map;
 
 async function initMap() {
-  // The location of Uluru
+  // mapのポジション設定
   const position = { lat: 35.44824967066238, lng: 132.9602847311755 };
 
-  // Request needed libraries.
-  //@ts-ignore
+  // ライブラリを呼ぶ(map)
   const { Map } = await google.maps.importLibrary("maps");
-  const { AdvancedMarkerView } = await google.maps.importLibrary("marker");
 
-  // The map, centered at Uluru
+  // mapの定義
   map = new Map(document.getElementById("map"), {
+    // 中央値、大きさ、ID
     zoom: 10.5,
     center: position,
     mapId: "DEMO_MAP_ID",
   });
 
   // The marker, positioned at Uluru
-  const marker = new AdvancedMarkerView({
+  const marker = new google.maps.Marker({
     map: map,
     position: position,
     title: "Uluru",
+    icon: "",
   });
 }
 
